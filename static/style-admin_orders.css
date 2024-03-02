@@ -1,0 +1,111 @@
+.nav-link
+{
+    color: black;
+    font-size: 14px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.nav-link:hover {
+    background-color: azure;
+    border-radius: 25px;
+  }
+
+a 
+{
+    text-decoration: none;
+}
+
+
+
+#element
+{
+    float: left;
+    margin-left: 20%;
+    margin-top: 1%;
+}
+
+
+#element2
+{
+    float: left;
+    margin-left: 5%;
+    margin-top: 1%;
+}
+
+#element3
+{
+    float: left;
+    margin-left: 6%;
+    margin-top: 1%;
+}
+
+#element4
+{
+    float: left;
+    margin-left: 5.8%;
+    margin-top: 2%;
+}
+
+.mojekonto
+{
+    margin-left: 26%;
+}
+
+.mojekonto2
+{
+    margin-left: 2%;
+}
+
+.mojekonto3
+{
+    margin-left: 10%;
+}
+
+.tekst
+{
+    color: black;
+    text-align: center;
+}
+
+
+.l1 
+{
+    text-decoration: none;
+    color:blue;
+}
+
+#logo
+{
+    color:blue;
+    font-size: 26px;
+    float: left;
+    margin-left: 2.5%;
+    margin-top: 1.5%;
+    
+}
+
+
+#wyszukiwarka 
+{
+    float: left;
+    width: 15%;
+    margin-top: 1.7%;
+    margin-left: 3%;
+}
+
+
+#szukajklawisz
+{
+    margin-left: 0.5%;
+    margin-top: 1.7%;
+    float: left;
+}
+
+
+
+#container
+{
+    height: 40%;
+}
+

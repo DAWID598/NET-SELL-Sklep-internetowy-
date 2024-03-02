@@ -1,0 +1,88 @@
+<HTML>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sklep internetowy NET-SELL</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style-help.css') }}">
+  </head>
+  <body>
+   
+
+
+    <div id="logo">
+      <p> <a href = "/" class="l1" style="text-decoration: none;">NET-SELL</a></p>
+  </div>
+
+  <div id ="wyszukiwarka"> 
+      <form>
+      <input type="text" class="form-control">
+      </form>
+      </div>
+
+      <div id="szukajklawisz">
+      <button type="submit" class="btn btn-primary mb-6">Szukaj</button>
+      
+  </div>
+  <div id="element">
+      <a href = "/login" style="text-decoration: none;">
+          <img class="mojekonto" src="{{ url_for('static', filename='assets/person.png') }}"width="40" height="30">
+      <div class="tekst">Moje Konto: {{session['user'] if 'user' in session }}</div>
+  </a>
+  </div>
+
+      <div id="element2">
+          <a href = "/shopping_cart" style="text-decoration: none;">
+              <img class="mojekonto2" src="{{ url_for('static', filename='assets/shopping_card.png') }}"width="40" height="30">
+              <div class="tekst">Koszyk</div>
+          </a>
+      </div>
+      
+      <div id="element3">
+          <a href = "/help" style="text-decoration: none;">
+              <img class="mojekonto3" src="{{ url_for('static', filename='assets/help.png') }}"width="40" height="30">
+              <div class="tekst">Pomoc</div>
+          </a>
+      </div>
+
+      {% if login.is_valid:  %}
+        <div id="element4">
+        <a class="logoutbutton" href="{{ url_for('logout') }}" style="text-decoration: none;">
+          Wyloguj:</a>
+        </div>
+        {% endif %}
+    <div style="clear:both;"></div>
+    
+
+
+  <div style="clear:both;"></div>
+
+  <div id="container">
+    <nav class="navbar bg-primary border-bottom border-body" data-bs-theme="dark">
+        <a class="nav-link" href="{{url_for('laptopy')}}">Laptopy</a>
+        <a class="nav-link" href="{{url_for('telefony')}}">Telefony</a>
+        <a class="nav-link" href="{{url_for('konsole')}}">Konsole</a>
+        <a class="nav-link" href="#">Podzespoły komputerowe</a>
+        <a class="nav-link" href="#">Urządzenia peryferyjne</a>
+      </nav>
+
+      <div id="container2">
+        <p class="tekst2">Chcesz się z nami skontaktować ?</p>
+        <p class="tekst3"><b>Infolinia sklepu:</b> <br> 000 000 000</p>
+        <p class="tekst3"><b>Infolinia czynna:</b> <br> Poniedziałek-Piątek: <br> 8.00 - 20.00 <br> Sobota-Niedziela: <br> 10.00 - 17.00 </p>
+        <p class="tekst4">Masz dodatkowe pytania ? <br> Zawsze możesz skontaktować się z nami poprzez maila: <br> <b> NET-SELL@gmail.com </b> </p>
+        <p class="tekst4">Adres korespondencyjny: <br> NET-SELL, <br> ul. Warszawska 528, Kielce</p>
+             </div>
+
+             <div id="customer-help-image">
+              <img src="{{url_for('static', filename='assets/customer-help.jpg')}}"width="650" height="600"> 
+             </div>
+
+             <div style="clear:both;"></div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  </body>
+</html>

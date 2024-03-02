@@ -1,0 +1,123 @@
+body
+{
+    background-image: url("assets/background.jpg");
+}
+
+a 
+{
+    text-decoration: none;
+}
+
+#logo
+{
+    color:blue;
+    font-size: 26px;
+    margin-top: 1.5%;
+    margin-left: 2.5%;
+    float: left;
+    
+}
+
+/*
+#ramka
+{
+    background-color: 	#C0C0C0;
+    border-radius: 50px;
+    width: 60%;
+    height: 60%;
+    margin-left: 20%;
+}
+*/
+#home
+{
+    float: left;
+    margin-left: 70%;
+    margin-top: 2.5%;
+}
+
+.l1 
+{
+    text-decoration: none;
+    color:blue;
+}
+
+#login
+{
+margin-top: 4.5%;
+margin-left: 45%;
+max-width: 12%;
+}
+
+#haslo
+{
+    margin-left: 45%;
+    margin-top: 2%;
+    max-width: 12%;
+}
+
+.guziki
+{
+    margin-left: 2%;
+    text-align: center;
+    margin-top: 2%;
+}
+
+
+#buttonl
+{
+background-color: #007bff;
+border-color: #007bff;
+border-radius: 50px;
+height: 35px;
+width: 90px;
+border: 2px;
+}
+
+#buttonr
+{
+background-color: #007bff;
+ border-color: #007bff;
+background-color: 007bff;
+border-radius: 50px;
+height: 35px;
+width: 110px;
+border: 2px;
+}
+
+#logowanie
+{
+border-radius: 75px;
+}
+
+#haslowanie
+{
+border-radius: 75px;
+}
+
+.tekst
+{
+    color: black;
+}
+
+.tekst1
+{
+    font-size: 18px;
+    text-align: center;
+   
+}
+
+.tekst2
+{
+    margin-left: 1.5%;
+    text-align: center;
+    margin-top: 2%;
+    font-size: 20px;
+}
+
+
+.zalogujtekst
+{
+    margin-left: 46.7%;
+    font-size: 24px;
+    margin-top: 8%;
+}

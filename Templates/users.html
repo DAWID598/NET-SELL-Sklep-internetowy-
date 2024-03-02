@@ -1,0 +1,167 @@
+{% from "macros.html" import show_flash_message %}
+{% from "macros.html" import show_all_flash_message %}
+<HTML>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Sklep internetowy NET-SELL</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='style-users.css') }}">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  
+      <style>
+        h2 {margin-top: 2%;}
+      </style>
+    </head>
+    <body>
+     {{ show_all_flash_message() }}
+
+     <script>
+      $(document).ready(function () {
+          // For A Delete Record Popup
+          // This function is applied to all elements with class ending  with ".delete-confirm"
+          $('.delete-confirm').click(function () {
+              // get attributes of the found element
+              var desc = $(this).attr('data-desc');
+              var url = $(this).attr('data-url');
+              // the #... designates id of an element - change the text in the modal window
+              $('#idDeleteModalBody').text(desc);
+              $("#confirmDeleteForm").attr("action", url);
+          });
+      });
+    </script>
+
+<div id="logo">
+  <p> <a href = "/" class="l1" style="text-decoration: none;">NET-SELL</a></p>
+</div>
+
+<div id ="wyszukiwarka"> 
+  <form>
+  <input type="text" class="form-control">
+  </form>
+  </div>
+
+  <div id="szukajklawisz">
+  <button type="submit" class="btn btn-primary mb-6">Szukaj</button>
+  
+
+</div>
+
+
+
+
+
+<div id="element">
+  <a href = "/user_panel" style="text-decoration: none;">
+      <img class="mojekonto" src="{{ url_for('static', filename='assets/person.png') }}"width="40" height="30">
+  <div class="tekst">Moje Konto: {{session['user'] if 'user' in session }}</div>
+</a>
+
+</div>
+
+  <div id="element2">
+      <a href = "/shopping_cart" style="text-decoration: none;">
+          <img class="mojekonto2" src="{{ url_for('static', filename='assets/shopping_card.png') }}"width="40" height="30">
+          <div class="tekst">Koszyk</div>
+      </a>
+  </div>
+  
+  <div id="element3">
+      <a href = "/help" style="text-decoration: none;">
+          <img class="mojekonto3" src="{{ url_for('static', filename='assets/help.png') }}"width="40" height="30">
+          <div class="tekst">Pomoc</div>
+      </a>
+  </div>
+
+  <div id="element4">
+  <a class="logoutbutton" href="{{ url_for('logout') }}" style="text-decoration: none;">
+    Wyloguj:</a>
+  </div>
+
+<div style="clear:both;"></div>
+
+
+
+     <!-- Modal -->
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ten użytkownik zostanie usunięty:</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="idDeleteModalBody">
+          ...
+        </div>
+        <div class="modal-footer">
+          <form action="" method="GET" id="confirmDeleteForm">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
+            <button type="submit" class="btn btn-danger">Usuń</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <h2 style='text-align: center;'>Lista użytkowników:</h1>
+
+  
+  <div class="container">
+      <table class="table" style="text-align: center;">
+          <thead>
+            <tr>
+              <th scope="col">ID:</th>
+              <th scope="col">Imie:</th>
+              <th scope="col">Nazwisko:</th>
+              <th scope="col">E-mail:</th>
+              <th scope="col">Uprawnienia administratora:</th>
+              <th scope="col">Konto aktywne:</th>
+              <th scope="col">Akcje:</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for user in users %}
+            <tr>
+              <th scope="row">{{ user.id }}</th>
+              <td>{{ user.name }}</td>
+              <td>{{ user.surname }}</td>
+              <td>{{ user.email }}</td>
+              <td>     <a href="{{ url_for('user_status_change', action='admin', user_name=user.email) }}">
+                {% if user.is_admin %}
+                   &check;
+                {% else %}
+                   &#x25a2;
+                {% endif %}
+            </a>
+         </td>
+         <td><a href="{{ url_for('user_status_change', action='active', user_name=user.email) }}">
+          {% if user.is_active %}
+             &check;
+          {% else %}
+             &#x25a2;
+          {% endif %}
+      </a>
+  </td>
+              <td>
+                  <a href="{{ url_for('edit_user', user_name=user.email) }}" 
+                     class="btn btn-success btn-sm" role="button">Edytuj...</a>
+                  <a type="button" class="btn btn-danger btn-sm delete-confirm" 
+                     data-bs-toggle="modal" data-bs-target="#confirmDeleteModal"
+                     data-desc="{{ 'Usunąć użytkownika:  {}  ?'.format(user.email) }}"
+                     data-url="{{ url_for('delete_user', user_name=user.email) }}">
+                    Usuń...
+                  </a>
+              </td>
+            </tr>
+            {%endfor%}
+          </tbody>
+        </table>
+  </div>
+  
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</html>

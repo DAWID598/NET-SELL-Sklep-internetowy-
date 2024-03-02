@@ -1,0 +1,118 @@
+body
+{
+    background-image:url("assets/background.jpg")
+}
+
+a 
+{
+    text-decoration: none;
+}
+
+#logo
+{
+    color:blue;
+    font-size: 26px;
+    margin-left: 2.5%;
+    float: left;
+    margin-top: 1.5%;
+    
+}
+
+#home
+{
+    float: left;
+    margin-left: 70%;
+    margin-top: 1.5%;
+}
+
+.l1 
+{
+    text-decoration: none;
+    color:blue;
+}
+
+#login
+{
+margin-left: 45%;
+width: 10%;
+text-align: center;
+}
+
+#imie
+{
+margin-left: 45%;
+width: 10%;
+text-align: center;
+margin-bottom: 2%;
+}
+
+#nazwisko
+{
+margin-left: 45%;
+width: 10%;
+text-align: center;
+}
+
+#haslo
+{
+    margin-left: 45%;
+    margin-top: 1%;
+    width: 10%;
+    text-align: center;
+}
+
+.logowanie
+{
+    border-radius: 75px;
+}
+
+
+.haslowanie
+{
+    border-radius: 75px;
+}
+
+#guziklogowania
+{
+    margin-left: 48%;
+    margin-top: 2%;
+}
+
+#guzikrejestracji
+{
+    margin-left: 42%;
+    margin-top: 2%;
+}
+
+#buttonr
+{
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 50px;
+    height: 35px;
+    width: 110px;
+    border: 2px;
+}
+
+.tekst
+{
+    color: black;
+}
+
+.tekst1
+{
+    margin-left: 5%;
+   
+}
+
+.tekst2
+{
+    margin-left: 44.5%;
+}
+
+
+.zalogujtekst
+{
+    margin-left: 42%;
+    font-size: 24px;
+}

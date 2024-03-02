@@ -1,0 +1,129 @@
+.nav-link:hover {
+    background-color: azure;
+    border-radius: 25px;
+  }
+
+a 
+{
+    text-decoration: none;
+}
+
+#logo
+{
+    color:blue;
+    font-size: 26px;
+    float: left;
+    margin-left: 2.5%;
+    margin-top: 1.5%;
+    
+}
+
+#element
+{
+    float: left;
+    margin-left: 19%;
+    margin-top: 1%;
+}
+
+
+#element2
+{
+    float: left;
+    margin-left: 5%;
+    margin-top: 1%;
+}
+
+#element3
+{
+    float: left;
+    margin-left: 6%;
+    margin-top: 1%;
+}
+
+#element4
+{
+    float: left;
+    margin-left: 5.8%;
+    margin-top: 2%;
+}
+
+.mojekonto
+{
+    margin-left: 26%;
+}
+
+.mojekonto2
+{
+    margin-left: 2%;
+}
+
+.mojekonto3
+{
+    margin-left: 10%;
+}
+
+.tekst
+{
+    color: black;
+}
+
+.tekst2
+{
+    text-align: center;
+    font-size: 24px;
+    margin-top: 5%;
+    margin-left: 2%;
+}
+
+.tekst3
+{
+    margin-left: 5%;
+    font-size: 20px;
+}
+
+.tekst4
+{
+    margin-left: 5%;
+    font-size: 20px;
+}
+
+#wyszukiwarka 
+{
+    float: left;
+    width: 15%;
+    margin-top: 1.7%;
+    margin-left: 3%;
+}
+
+#szukajklawisz
+{
+    margin-left: 0.5%;
+    margin-top: 1.7%;
+    float: left;
+}
+
+#container2
+{
+    background-color: #a0a0a0;
+    width: 28%;
+    border-radius: 25px;
+    margin-top: 2%;
+    margin-left: 6%;
+    float: left;
+}
+
+.nav-link
+{
+    color: black;
+    font-size: 14px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#customer-help-image
+{
+    float: left;
+    margin-left: 13%;
+    margin-top: 0.5%;
+}
+
